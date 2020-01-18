@@ -1,24 +1,13 @@
-# vue-admin-base
+# vue-demo-box
 
-## Project setup
-```
-yarn install
-```
+## 介绍
+项目开发过程中基本demo示例集合笔记
+## 日志
+1. 2020年1月18日
+     * 增加下载图片示例
+     * 增加文本溢出示例
+2. 2020年1月17日
+     * 增加下拉加载示例
+     * 增加websocket使用示例
+     * 增加socket.io使用示例
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
