@@ -35,6 +35,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "layout" */ "../views/layout/index.vue"),
     children: [
+      //下拉加载
       {
         path: "pull-down-list",
         name: "PullDownList",
@@ -44,9 +45,10 @@ const routes = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "org" */ "../views/PullDownList/PullDownList.vue"
+            /* webpackChunkName: "Demo" */ "../views/PullDownList/PullDownList.vue"
           )
       },
+      //文本溢出显示更多
       {
         path: "text-overflow",
         name: "TextOverflow",
@@ -56,9 +58,10 @@ const routes = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "org" */ "../views/TextOverflow/TextOverflow.vue"
+            /* webpackChunkName: "Demo" */ "../views/TextOverflow/TextOverflow.vue"
           )
       },
+      //下载图片
       {
         path: "download-image",
         name: "DownloadImage",
@@ -68,9 +71,10 @@ const routes = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "org" */ "../views/DownloadImage/DownloadImage.vue"
+            /* webpackChunkName: "Demo" */ "../views/DownloadImage/DownloadImage.vue"
           )
       },
+      //websocket通信
       {
         path: "websocket",
         name: "WebSocket",
@@ -80,9 +84,10 @@ const routes = [
         },
         component: () =>
           import(
-            /* webpackChunkName: "org" */ "../views/WebSocket/WebSocket.vue"
+            /* webpackChunkName: "Demo" */ "../views/WebSocket/WebSocket.vue"
           )
       },
+      //socket.io通信
       {
         path: "socket-io",
         name: "SocketIo",
@@ -91,7 +96,35 @@ const routes = [
           breadcrumb: true
         },
         component: () =>
-          import(/* webpackChunkName: "org" */ "../views/SocketIo/SocketIo.vue")
+          import(
+            /* webpackChunkName: "Demo" */ "../views/SocketIo/SocketIo.vue"
+          )
+      }
+    ]
+  },
+  {
+    path: "/other-demo",
+    name: "OtherDemo",
+    meta: {
+      title: "OtherDemo",
+      icon: "el-icon-user",
+      breadcrumb: true
+    },
+    redirect: "/other-demo/tag",
+    component: () =>
+      import(/* webpackChunkName: "layout" */ "../views/layout/index.vue"),
+    children: [
+      {
+        path: "tag",
+        name: "Tag",
+        meta: {
+          title: "语义化标签",
+          breadcrumb: true
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "OtherDemo" */ "../views/OtherDemo/tag/tag.vue"
+          )
       }
     ]
   }
