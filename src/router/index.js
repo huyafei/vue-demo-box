@@ -76,6 +76,18 @@ const routes = [
       },
       //websocket通信
       {
+        path: "sku",
+        name: "Sku",
+        meta: {
+          title: "商品sku",
+          breadcrumb: true
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "org" */ "../views/Sku/Sku.vue"
+            )
+      },
+      {
         path: "websocket",
         name: "WebSocket",
         meta: {
