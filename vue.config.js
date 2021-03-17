@@ -10,18 +10,18 @@ module.exports = {
     open: true, // 配置自动启动浏览器
     // proxy: "http://localhost:9527" // 配置跨域处理,只有一个代理
     //端口
-    port: 9529
+    port: 9529,
     // host: 'wxtest.com',
-    // proxy: {
-    // "/api": {
-    //   target: "http://192.168.0.188:8080/api",
-    //   ws: true,
-    //   changeOrigin: true,
-    //   pathRewrite: {
-    //     "^/api": "/"
-    //   }
-    // }
-    // } // 配置多个代理,
+    proxy: {
+      "/ajaxchattest/": {
+        target: "http://123.207.136.134:9010",
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          "^/ajaxchattest/": "/"
+        }
+      }
+    } // 配置多个代理,
   },
   // chainWebpack: config => {
   //   const types = ["vue-modules", "vue", "normal-modules", "normal"];

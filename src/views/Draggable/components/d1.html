@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>放大缩小图片</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body id="box">
+<img class="imgclass" src="./11.jpg" alt="">
+
+
+<script type="text/javascript">
+  var imgList=[];
+  $("#box").on('click',".imgclass",function(e){
+    e.stopPropagation();
+    var that=$(this);
+    var imgs=that.attr('src');
+    var nowImgUrl= that.attr('src');
+    if(!imgList.includes(imgs)){
+      imgList.push(imgs);
+    }
+    WeixinJSBridge.invoke("imagePreview",{
+      "urls":imgList,
+      "current":nowImgUrl
+    });
+  });
+</script>
+</body>
+</html>

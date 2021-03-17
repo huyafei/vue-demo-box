@@ -4,7 +4,7 @@
       <h2>下拉加载</h2>
       <div class="list" id="list">
         <div class="list-item" v-for="(item, index) in list" :key="index">
-          {{ index }}
+          {{ item }}
         </div>
         <div v-if="isLoading" class="list-item">
           加载中
@@ -14,43 +14,27 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "PullDownList",
   components: {},
-  mixins: [],
   props: {},
   data() {
     return {
-      isLoading:false,
+      isLoading: false,
       list: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}]
     };
   },
   //计算属性
   computed: {},
   watch: {},
-  beforeCreate() {},
   created() {},
-  beforeMount() {},
+
   mounted() {
     let elList = document.getElementById("list");
     elList.addEventListener("scroll", this.handleScroll, true);
+  },
 
-  },
-  beforeUpdate() {},
-  updated() {},
-  //keep-alive 组件激活时调用
-  activated() {},
-  //keep-alive 组件停用时调用。
-  deactivated() {},
-  //销毁之前
-  beforeDestroy() {
-    // let elList = document.getElementById("list");
-    // elList.removeEventListener("scroll", this.handleScroll);
-  },
-  //销毁后
-  destroyed() {
-
-  },
   //方法
   methods: {
     handleScroll() {
@@ -93,6 +77,7 @@ export default {
   background: #f4f4f4;
   border: 1px solid #333;
   overflow-y: auto;
+
   .list-item {
     text-align: center;
     background: #fff;

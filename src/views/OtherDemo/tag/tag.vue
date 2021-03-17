@@ -36,6 +36,7 @@
         <dd>表示文档中的一个区域（或节），比如，内容中的一个专题组</dd>
       </dl>
     </div>
+
   </div>
 </template>
 <script>
@@ -43,13 +44,21 @@ export default {
   name: "",
   components: {},
   data() {
-    return {};
+    return {
+      list: [145, 112, 100, 120, 130, 160],
+      maxData: 0
+    };
   },
-  methods: {},
-  //计算属性
   computed: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.maxData = Math.max(...this.list);
+  },
+  methods: {
+    styleHeight(data) {
+      return { height: ((data / this.maxData) * 300).toFixed() + "px" };
+    }
+  },
   watch: {}
 };
 </script>
@@ -61,6 +70,20 @@ dl {
   }
   dd {
     margin-bottom: 16px;
+  }
+}
+.item {
+  .list {
+    height: 300px;
+    width: 80px;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    background: rgba(255, 0, 0, 0.2);
+    margin: 30px;
+    &.last-list {
+      background: rgba(0, 255, 0, 0.3);
+    }
   }
 }
 </style>

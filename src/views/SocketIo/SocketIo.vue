@@ -3,12 +3,13 @@
     <div class="app-container">
       <h2>socket.io通信</h2>
       <div>
-	      <el-button type="primary" @click="socketOpen">链接</el-button>
+        <el-button type="primary" @click="socketOpen">链接</el-button>
       </div>
     </div>
   </div>
 </template>
 <script>
+
 export default {
   name: "SocketIo",
   components: {},
@@ -27,7 +28,7 @@ export default {
   sockets: {
     connect: function(e) {
       // this.id = this.$socket.id;
-      console.log("--socket--连接成功",e);
+      console.log("--socket--连接成功", e);
     },
     customEmit: function(data) {
       console.log("--socket--data", data);
@@ -36,17 +37,17 @@ export default {
     // 	console.log('--socket--', res);
     // },
     connect_error(err) {
-      console.log("--socket--连接失败",err);
-    //   //这里监听 链接失败的事件
-    //   //链接失败 sccket会一直尝试去链接有些情况下 我们不需要一直尝试
-    //   // 关闭请求
-    //   // this.$socket.close();
-    //   // 开启请求
+      console.log("--socket--连接失败", err);
+      //   //这里监听 链接失败的事件
+      //   //链接失败 sccket会一直尝试去链接有些情况下 我们不需要一直尝试
+      //   // 关闭请求
+      //   // this.$socket.close();
+      //   // 开启请求
       this.$socket.emit("connect", {
         authcode: "508C1ACEEE1142F88922B42ECC522FC5",
         ids: ["FBBFGW1912XXXX0000000002"]
       });
-    //   // this.$socket.open();
+      //   // this.$socket.open();
     }
   },
   mounted() {
@@ -72,7 +73,7 @@ export default {
   destroyed() {},
   //方法
   methods: {
-    socketOpen(){
+    socketOpen() {
       this.$socket.emit("connect", {
         authcode: "508C1ACEEE1142F88922B42ECC522FC5",
         ids: ["FBBFGW1912XXXX0000000002"]

@@ -33,16 +33,6 @@ export default {
   mounted() {
     this.initWebSocket();
   },
-  beforeUpdate() {},
-  updated() {},
-  //keep-alive 组件激活时调用
-  activated() {},
-  //keep-alive 组件停用时调用。
-  deactivated() {},
-  //销毁之前
-  beforeDestroy() {},
-  //销毁后
-  destroyed() {},
   //方法
   methods: {
     websocketSend() {},

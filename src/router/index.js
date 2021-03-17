@@ -50,6 +50,17 @@ const routes = [
       },
       //文本溢出显示更多
       {
+        path: "pdf",
+        name: "PDF",
+        meta: {
+          title: "pdf导出",
+          breadcrumb: true
+        },
+        component: () =>
+          import(/* webpackChunkName: "Demo" */ "../views/PDF/pdf.vue")
+      },
+      //文本溢出显示更多
+      {
         path: "text-overflow",
         name: "TextOverflow",
         meta: {
@@ -74,7 +85,7 @@ const routes = [
             /* webpackChunkName: "Demo" */ "../views/DownloadImage/DownloadImage.vue"
           )
       },
-      //websocket通信
+      //商品sku
       {
         path: "sku",
         name: "Sku",
@@ -83,10 +94,9 @@ const routes = [
           breadcrumb: true
         },
         component: () =>
-          import(
-            /* webpackChunkName: "org" */ "../views/Sku/Sku.vue"
-            )
+          import(/* webpackChunkName: "org" */ "../views/Sku/Sku.vue")
       },
+      //websocket通信
       {
         path: "websocket",
         name: "WebSocket",
@@ -111,7 +121,53 @@ const routes = [
           import(
             /* webpackChunkName: "Demo" */ "../views/SocketIo/SocketIo.vue"
           )
-      }
+      },
+      //d3
+      {
+        path: "d3-demo",
+        name: "D3Demo",
+        meta: {
+          title: "d3",
+          breadcrumb: true
+        },
+        component: () =>
+          import(/* webpackChunkName: "Demo" */ "../views/D3/d3-demo.vue")
+      },
+      //拖拽
+      {
+        path: "draggable",
+        name: "Draggable",
+        meta: {
+          title: "拖拽",
+          breadcrumb: true
+        },
+        component: () =>
+          import(
+            /* webpackChunkName: "Demo" */ "../views/Draggable/Draggable.vue"
+          )
+      },
+      //抽奖
+      {
+        path: "prize",
+        name: "Prize",
+        meta: {
+          title: "抽奖",
+          breadcrumb: true
+        },
+        component: () =>
+          import(/* webpackChunkName: "Demo" */ "../views/Prize/Prize.vue")
+      },
+      //微信支付宝支付
+      {
+        path: "Pay",
+        name: "Pay",
+        meta: {
+          title: "支付",
+          breadcrumb: true
+        },
+        component: () =>
+          import(/* webpackChunkName: "Demo" */ "../views/Pay/Pay.vue")
+      },
     ]
   },
   {
